@@ -425,3 +425,4 @@ app.listen(PORT, () => {
   } catch(e) {
     console.log('⚠️ Бот не запустился:', e.message);
   }
+});
