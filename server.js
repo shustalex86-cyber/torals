@@ -415,4 +415,12 @@ app.listen(PORT, () => {
   console.log(`🌐 Сервер запущен: http://localhost:${PORT}`);
   console.log(`📁 База данных: torals.db`);
   console.log(`📸 Файлы: ${uploadDir}\n`);
+
+  // Запуск Telegram-бота
+  try {
+    require('./bot.js');
+    console.log('🤖 Telegram-бот запущен');
+  } catch(e) {
+    console.log('⚠️ Бот не запустился:', e.message);
+  }
 });
