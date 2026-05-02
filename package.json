@@ -1,0 +1,5 @@
+node_modules/
+torals.db
+uploads/*
+!uploads/.gitkeep
+.admin_chat_id
