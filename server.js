@@ -418,9 +418,10 @@ app.listen(PORT, () => {
 
   // Запуск Telegram-бота
   try {
+    global.sharedDb = db;
+    global.uploadDir = uploadDir;
     require('./bot.js');
     console.log('🤖 Telegram-бот запущен');
   } catch(e) {
     console.log('⚠️ Бот не запустился:', e.message);
   }
-});
