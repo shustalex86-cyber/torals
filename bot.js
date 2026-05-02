@@ -6,8 +6,8 @@ const https = require('https');
 
 const TOKEN = process.env.BOT_TOKEN || '8750691630:AAFBa2H0ETvs25QT9kfYxF8Q4hEuOM9DkGE';
 const bot = new TelegramBot(TOKEN, { polling: true });
-const db = new Database(path.join(__dirname, 'torals.db'));
-const uploadDir = path.join(__dirname, 'uploads');
+const db = global.sharedDb || new Database(path.join(__dirname, 'torals.db'));
+const uploadDir = global.uploadDir || path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
 const userProject = {};
